@@ -1,0 +1,80 @@
+T01 - Create repo skeleton and first commit
+T02 - Write VM definitions for core-01 and workload-01
+T03 - Baseline inventory for both VMs (OS, disk, network, services)
+T04 - Create non-root admin user with sudo on both VMs
+T05 - Configure SSH key auth from host to both VMs
+T06 - Lock down SSH (disable root login and password auth)
+T07 - Prove lockout recovery via Hyper-V console
+T08 - Apply updates safely and document changes
+T09 - Enable firewall baseline (allow SSH only)
+T10 - Document access procedure (how-to-connect)
+T11 - Define network plan (IPs, gateway, DNS, rules)
+T12 - Set static IP on core-01
+T13 - Set static IP on workload-01
+T14 - Validate host-to-VM connectivity (ping/ssh/dns)
+T15 - Validate VM-to-VM connectivity (core <-> workload)
+T16 - Implement name resolution strategy for core-01/workload-01
+T17 - Define outbound traffic policy and implement baseline rules
+T18 - Networking drill: break routing and recover
+T19 - Networking drill: break DNS and recover
+T20 - Write network contract (allowed flows and boundaries)
+T21 - Define filesystem standard (apps/config/logs/data locations)
+T22 - Process control drill (ps/top/kill/signals/exit codes)
+T23 - systemd basics drill (start/stop/enable/disable services)
+T24 - Create heartbeat script and systemd unit
+T25 - journalctl mastery (filtering, follow, boot logs)
+T26 - Disk failure drill (fill disk, observe, recover)
+T27 - CPU/RAM stress drill (observe, recover)
+T28 - Permissions drill (break and fix service permissions)
+T29 - Package discipline (minimal installs + rationale log)
+T30 - Incident report 0001 (ops/failure learning)
+T31 - Install PostgreSQL on core-01
+T32 - Secure Postgres basics (roles, users, least privilege)
+T33 - Allow workload-01 to connect to Postgres securely
+T34 - Define DB conventions (naming, roles per client)
+T35 - Manual backup #1 (pg_dump) and store predictably
+T36 - Manual restore #1 into a new DB name
+T37 - DB failure drill (stop/start/restart and validate)
+T38 - DB health checks (simple commands + expected output)
+T39 - DB access audit (who can connect and from where)
+T40 - Incident report 0002 (database-related)
+T41 - Define first app spec (Notes/Todo API endpoints + config)
+T42 - Build minimal API locally (runs on dev machine)
+T43 - Add Postgres integration (create/read/write data)
+T44 - Move config to env vars (no hardcoded secrets)
+T45 - Deploy app to workload-01 manually (deps + files)
+T46 - Run app via systemd as non-root user
+T47 - Make logs usable (journalctl output is meaningful)
+T48 - Add health endpoint and verify with curl
+T49 - Write app runbook (deploy/restart/debug/recover)
+T50 - Break-and-recover drill for the app (config/crash)
+T51 - Define client model (DB + user + config + routing)
+T52 - Create Client A manually (DB/user/creds)
+T53 - Create Client B manually (DB/user/creds)
+T54 - Configure app for Client A (works end-to-end)
+T55 - Configure app for Client B (works end-to-end)
+T56 - Decide routing method (port/hostname/path) and document
+T57 - Implement routing with reverse proxy on workload-01
+T58 - Isolation test: Client A broken, Client B still works
+T59 - Write client lifecycle checklist (create/update/delete)
+T60 - Incident report 0003 (multi-client issue)
+T61 - Write idempotent deploy script for the app
+T62 - Write create-client script (DB/user/config/route)
+T63 - Write delete-client script (safe teardown)
+T64 - Write secrets rotation script (DB password rotation)
+T65 - Write backup-all-clients script (per-client dumps)
+T66 - Write restore-client script (restore to new DB)
+T67 - Add structured logging to scripts (timestamps, levels)
+T68 - Add dry-run mode for destructive commands
+T69 - Document automation contract (scripts README)
+T70 - Incident report 0004 (automation mistake + fix)
+T71 - Define central logging approach (minimal, realistic)
+T72 - Implement basic metrics collection (CPU/RAM/Disk trend)
+T73 - Add uptime/health checks for app + DB
+T74 - Define backup policy (frequency, retention, storage)
+T75 - Full restore drill (prove you can recover service)
+T76 - Security hardening round 2 (SSH/UFW/least privilege)
+T77 - Define patch routine (monthly process + rollback)
+T78 - Run a GameDay failure scenario and recover via runbook
+T79 - Create accurate architecture diagram (matches reality)
+T80 - Write reflection v1 (lessons, gaps, next iteration)
