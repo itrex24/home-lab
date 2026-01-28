@@ -1,0 +1,40 @@
+name: core-01
+purposeL core services baseline vm
+
+hypervisor: Hyper-vm
+generation: gen2
+host_os: Windows 11 Pro
+
+os: ubuntu server 24.04.3 lts
+kernel: 6.8.x generic
+
+cpu: 2 vCPU
+memory: 2048mb (dynamic enabled)
+disk:
+    type: vhdx
+    size: 40gb
+    layout:
+        - /boot/efi: fat32 ~1gb
+        - /boot: ext4 ~2gb
+        - /; ext4 on lvm (~18gb)
+
+network:
+    switch: homelab-internal
+    interface: eth0
+    ipv4:
+        address: 192.168.100.10/24
+        gateway: 192.168.100.1
+    dns:
+        - 1.1.1.1
+        - 8.8.8.8
+    nat: privded by windows host
+
+access:
+    ssh: enabled
+    auth: password
+    users:
+        - antonio (sudo)
+
+state:
+    baseline_checkpoint: core-01-baseline-networked
+    rebuildable: no (stateful for now)
