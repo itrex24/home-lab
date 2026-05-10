@@ -31,7 +31,7 @@ network:
 
 access:
     ssh: enabled
-    auth: password
+    auth: ssh key auth
     users:
         - antonio (sudo)
 

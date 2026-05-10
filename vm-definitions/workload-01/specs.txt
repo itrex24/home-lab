@@ -31,7 +31,8 @@ network:
 
 access:
     ssh: enabled
-    auth: password
+    ssh_alias: workload-01
+    auth: ssh key auth
     users:
         - antonio (sudo)
 
